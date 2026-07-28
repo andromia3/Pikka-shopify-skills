@@ -5,7 +5,7 @@
 The baseline audit is already useful. The Skill's value is not simply producing a longer answer: it turns a collection of recommendations into a structured CRO diagnosis, an evidence trail, and a prioritized experimentation backlog.
 
 <p align="center">
-  <img src="assets/cro-skill-before-after.svg" alt="Claude Code Shopify CRO audit comparison: without the Skill versus with the Skill" width="100%">
+  <img src="https://cdn.shopify.com/s/files/1/0250/4150/2293/files/cro-skill-before-after.png?v=1785225153" alt="Claude Code Shopify CRO audit comparison: without the Skill versus with the Skill" width="100%">
 </p>
 
 ### At a glance
