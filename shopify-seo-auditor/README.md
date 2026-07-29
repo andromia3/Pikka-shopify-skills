@@ -2,6 +2,10 @@
 
 > Same prompt. Same Shopify store. Same Claude model. Only the SEO Audit Skill changes.
 
+<p align="center">
+  <img src="https://cdn.shopify.com/s/files/1/0250/4150/2293/files/audit-seo-shopify-skill.png?v=1785317614" alt="Claude Code Shopify CRO audit comparison: without the Skill versus with the Skill" width="100%">
+</p>
+
 ## Test setup
 
 | Variable | Value |
