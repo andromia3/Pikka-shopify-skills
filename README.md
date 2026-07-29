@@ -7,6 +7,6 @@ Open-source AI skills developed by Pikka for Shopify merchants, developers and a
 | Skill | Description |
 |---|---|
 | [Shopify CRO Auditor](skills/shopify-cro-auditor/) | Audit a Shopify store and generate a prioritized CRO roadmap |
-
+| [Shopify SEO Auditor](skills/shopify-seo-auditor/) | Optimize your SEO with our SEO Shopify skill |
 
 Developed by [Pikka](https://www.pikka.fr/).
