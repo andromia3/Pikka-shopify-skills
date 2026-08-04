@@ -144,5 +144,4 @@ The Shopify SEO Auditor Skill produces a more reliable audit by:
 
 ## Full outputs
 
-- [Baseline audit without the Skill](examples/nooance/baseline-without-skill.md)
-- [Audit with the Shopify SEO Skill](examples/nooance/audit-with-shopify-seo-skill.md)
+- [Audit with the Shopify SEO Skill](examples/audit-with-shopify-seo-skill.md)

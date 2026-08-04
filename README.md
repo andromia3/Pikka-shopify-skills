@@ -39,14 +39,14 @@ Everything here is read-and-reason tooling. The Skills do not run destructive co
 
 | Skill | What it does |
 | --- | --- |
-| [`shopify-ecommerce-director`](skills/shopify-ecommerce-director/SKILL.md) | Acts as a senior e-commerce director. Turns business data, an audit, or a store description into a prioritized 30/60/90 roadmap. |
-| [`shopify-seo-auditor`](skills/shopify-seo-auditor/SKILL.md) | Finds Shopify-specific SEO issues (collections, products, canonicals, indexation, structured data) and produces a priority matrix. |
-| [`shopify-migration-seo-guardian`](skills/shopify-migration-seo-guardian/SKILL.md) | Protects SEO during a migration to Shopify: URL inventory, redirect mapping, pre-launch / go-live / post-launch checklists. |
-| [`shopify-cro-auditor`](skills/shopify-cro-auditor/SKILL.md) | Audits the store for conversion: page-by-page friction analysis, quick wins, and an impact/effort test backlog. |
-| [`shopify-liquid-reviewer`](skills/shopify-liquid-reviewer/SKILL.md) | Reviews a Shopify theme for bugs, tech debt, architecture issues, and performance, with severity-rated findings. |
-| [`shopify-tracking-ga4-auditor`](skills/shopify-tracking-ga4-auditor/SKILL.md) | Audits GA4 / tracking quality: event coverage, duplicate events, consent mode, attribution risks, and a QA checklist. |
-| [`shopify-email-klaviyo-strategist`](skills/shopify-email-klaviyo-strategist/SKILL.md) | Builds an actionable Klaviyo / lifecycle email strategy: flows, segmentation, calendar, and a priority roadmap. |
-| [`shopify-b2b-advisor`](skills/shopify-b2b-advisor/SKILL.md) | Scopes a B2B project on Shopify: requirements, recommended architecture, feature matrix, roadmap, and risks. |
+| [`shopify-ecommerce-director`](shopify-ecommerce-director/SKILL.md) | Acts as a senior e-commerce director. Turns business data, an audit, or a store description into a prioritized 30/60/90 roadmap. |
+| [`shopify-seo-auditor`](shopify-seo-auditor/SKILL.md) | Finds Shopify-specific SEO issues (collections, products, canonicals, indexation, structured data) and produces a priority matrix. |
+| [`shopify-migration-seo-guardian`](shopify-migration-seo-guardian/SKILL.md) | Protects SEO during a migration to Shopify: URL inventory, redirect mapping, pre-launch / go-live / post-launch checklists. |
+| [`shopify-cro-auditor`](shopify-cro-auditor/SKILL.md) | Audits the store for conversion: page-by-page friction analysis, quick wins, and an impact/effort test backlog. |
+| [`shopify-liquid-reviewer`](shopify-liquid-reviewer/SKILL.md) | Reviews a Shopify theme for bugs, tech debt, architecture issues, and performance, with severity-rated findings. |
+| [`shopify-tracking-ga4-auditor`](shopify-tracking-ga4-auditor/SKILL.md) | Audits GA4 / tracking quality: event coverage, duplicate events, consent mode, attribution risks, and a QA checklist. |
+| [`shopify-email-klaviyo-strategist`](shopify-email-klaviyo-strategist/SKILL.md) | Builds an actionable Klaviyo / lifecycle email strategy: flows, segmentation, calendar, and a priority roadmap. |
+| [`shopify-b2b-advisor`](shopify-b2b-advisor/SKILL.md) | Scopes a B2B project on Shopify: requirements, recommended architecture, feature matrix, roadmap, and risks. |
 
 ## How to use these Skills
 
@@ -56,7 +56,7 @@ These are [Agent Skills](https://docs.anthropic.com/en/docs/claude-code/skills):
 
 ### In the Claude app (web, desktop, mobile)
 
-1. Zip the Skill folder you want (e.g. `skills/shopify-seo-auditor/` → `shopify-seo-auditor.zip`). The ZIP must contain the folder, not just `SKILL.md`.
+1. Zip the Skill folder you want (e.g. `shopify-seo-auditor/` → `shopify-seo-auditor.zip`). The ZIP must contain the folder, not just `SKILL.md`.
 2. In Claude, go to **Customize → Skills**, click **`+`** → **Create skill** → **Upload a skill**, and select the ZIP.
 3. Make sure the Skill is toggled on, then describe your store in a new conversation.
 
@@ -67,7 +67,7 @@ Requires code execution enabled in **Settings → Capabilities**. Available on a
 1. Copy the Skill folder you want (e.g. `shopify-seo-auditor/`) into your Skills directory:
    - Personal Skills: `~/.claude/skills/`
    - Project Skills: `.claude/skills/` inside your repository
-   You can also copy the whole `skills/` folder.
+   You can also copy every Skill folder at once.
 2. Restart Claude Code (or start a new session) so it picks up the Skills.
 3. Ask for the work in plain language. Claude will load the matching Skill automatically based on its description, for example:
    - "Audit the SEO of my Shopify store, here are the details: ..."

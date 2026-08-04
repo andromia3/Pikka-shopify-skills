@@ -65,7 +65,6 @@ This matters because a CRO audit should not present heuristic observations as pr
 
 ### Full, unedited outputs
 
-- [Baseline audit — without the Skill](examples/baseline-without-skill.md)
 - [Audit generated with the CRO Audit Skill](examples/audit-with-cro-skill.md)
 
 <details>

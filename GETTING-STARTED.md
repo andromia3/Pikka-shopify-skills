@@ -55,7 +55,7 @@ Not sure? Start with **`shopify-ecommerce-director`**. It looks at the whole bus
    - **Windows:** right-click the file → *Extract All* → *Extract*.
    - **Mac:** double-click the file.
 
-You now have a folder called `Pikka-shopify-skills-main`. Inside it, open the folder named **`skills`**. You'll see one folder per Skill.
+You now have a folder called `Pikka-shopify-skills-main`. Open it — you'll see one folder per Skill, each named after the Skill (`shopify-seo-auditor`, `shopify-cro-auditor`, and so on).
 
 ---
 
@@ -63,7 +63,7 @@ You now have a folder called `Pikka-shopify-skills-main`. Inside it, open the fo
 
 Claude expects **one Skill per ZIP file** — not the whole collection at once.
 
-Inside the `skills` folder, find the folder for the Skill you picked in the table above (for example `shopify-seo-auditor`), then:
+Find the folder for the Skill you picked in the table above (for example `shopify-seo-auditor`), then:
 
 - **Windows:** right-click the folder → *Send to* → *Compressed (zipped) folder*.
 - **Mac:** right-click the folder → *Compress "shopify-seo-auditor"*.
