@@ -1,6 +1,18 @@
 # Output Templates — Shopify SEO Auditor
 
-Copy-pasteable deliverable structure. Fill brackets; delete rows that don't apply.
+Copy-pasteable deliverable structure. Fill brackets; **delete every row, table, and section you could not actually measure** — an empty placeholder in a client deliverable is worse than its absence.
+
+---
+
+## 0. Coverage
+
+Goes first, before any finding. The reader must know what this audit does and does not cover before they read a single recommendation.
+
+> **Mode.** [1 scripted / 2 agentic / 3 read-and-reason] — [n] URLs sampled across [n] template classes.
+>
+> **Data provided.** [GSC export (queries only / queries + pages), analytics, crawl, authority data — list what was actually supplied.]
+>
+> **Not assessed.** [Areas skipped, in one line each. If everything was covered, say so.]
 
 ---
 
@@ -14,7 +26,7 @@ Copy-pasteable deliverable structure. Fill brackets; delete rows that don't appl
 
 ### Baseline snapshot
 
-Recorded before any change, so impact is provable later.
+Recorded before any change, so impact is provable later. **Keep only the rows you measured.** A blank or estimated baseline is useless — it cannot prove anything three months from now.
 
 | Metric | Value | Source | Date |
 | --- | --- | --- | --- |
@@ -108,3 +120,20 @@ Re-run against the baseline snapshot so impact is provable, not asserted.
 | Week 8-12 | CWV, organic sessions | `psi_report.py`, analytics | [ ] |
 
 **Validation after changes:** re-crawl, recheck GSC coverage, confirm canonicals/sitemaps, monitor index and organic trend for 2-4 weeks. Attribute cautiously — seasonality and algorithm updates move these numbers too.
+
+---
+
+## 7. Not assessed
+
+Every checklist area that could not be evaluated, and what would unlock it. This section exists so the reader never mistakes silence for a clean bill of health.
+
+**These areas were not audited. That is not the same as finding no problem in them.**
+
+| Area | Why not assessed | What would unlock it |
+| --- | --- | --- |
+| 13. Performance / Core Web Vitals | No PageSpeed API key available | A free key (`scripts/README.md`), or a PageSpeed Insights run on home, top collection, top PDP |
+| 14. Cannibalisation | GSC export carried queries only | Re-export Search Console with **both** Query and Page dimensions |
+| 15. Authority | No backlink or competitive data provided | Referring-domain count from any SEO tool, plus the 3-5 sites ranking for your priority queries |
+| [ ] | [ ] | [ ] |
+
+Delete the rows that do not apply. If every area was assessed, replace this section with a single line saying so.

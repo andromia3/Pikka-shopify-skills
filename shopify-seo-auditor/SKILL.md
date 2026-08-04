@@ -60,6 +60,38 @@ Build the URL sample to cover **every template class**: home, 2-3 top collection
 
 **Mode 3 — Read-and-reason (no web access, e.g. most claude.ai setups).** Work from the data provided. State clearly in the diagnosis that findings are based on supplied exports and descriptions, and list the checks that require a live look as verification steps in the implementation checklist.
 
+### Capability check — do this first, and tell the user
+
+Before running anything, establish what is actually available, and **state it plainly to the user in one short block before producing the audit**. Do not discover a missing capability halfway through and quietly work around it.
+
+Check, in order:
+
+| Capability | How to check | If unavailable |
+| --- | --- | --- |
+| Script execution | Can you run `python --version`? | Drop to Mode 2 or 3 |
+| Network access to the store | Try one fetch of the home page | Drop to Mode 3 |
+| `PAGESPEED_API_KEY` | Is the env var set? | **No Core Web Vitals data** — area 13 is not assessed |
+| Search Console export | Did the user provide one? | **No brand split, no striking distance, no low-CTR analysis** |
+| GSC export with Query *and* Page | Does the file carry both columns? | **No cannibalisation analysis** — area 14 is not assessed |
+| Authority data | Did the user provide referring domains or a competitive set? | **No authority ceiling** — area 15 is not assessed |
+| Browser / rendered DOM | Is a browser tool available? | JS-dependent findings stay `UNVERIFIABLE` |
+
+Then tell the user, before the deliverable, something in the shape of:
+
+> **Coverage for this audit.** Running in Mode 1 (scripts, 26 URLs sampled). Search Console export provided (queries only). Not assessed: Core Web Vitals (no PageSpeed API key), cannibalisation (export lacks the Page column), authority (no backlink data provided).
+>
+> To close those gaps: set `PAGESPEED_API_KEY` (free key at the link in `scripts/README.md`), re-export GSC with Query **and** Page dimensions, and share a referring-domains figure from any SEO tool.
+
+Keep it to a few lines. The point is that the user knows what they are getting and what one extra input would buy them — before they read the findings, not after.
+
+### What "not assessed" means in the deliverable
+
+- **An unmeasured area is omitted from the audit body.** Do not emit an empty section, a table of `[ ]` placeholders, or a heading with "no data available" underneath. Collect them all into the single **"Not assessed"** section of the deliverable, each with the reason and the input that would unlock it.
+- **Never report an unmeasured area as a pass.** "No Core Web Vitals issues found" is a lie when CWV was never measured. Absence of measurement is not absence of problem, and this is the single most damaging thing this Skill could do to a merchant's decisions.
+- **The baseline snapshot carries measured rows only.** Delete the rest rather than filling them with blanks.
+- **Do not estimate a metric a script exists to measure.** No guessed LCP, no invented indexed-URL count, no assumed brand split. If it was not measured, it is not in the audit.
+- Findings that depend on an unavailable capability are `UNVERIFIABLE`: they move to the verification-steps list in the implementation checklist, never into Critical or High.
+
 ### Rules that apply in every mode
 
 - **Read-only, always.** GET requests only. Never access the store admin, never request or accept credentials, never submit a form, never recommend a change be applied automatically.
@@ -70,7 +102,8 @@ Build the URL sample to cover **every template class**: home, 2-3 top collection
 
 ## Workflow
 
-1. **Capture the baseline.** Before analysing anything, record the current state so impact is provable later: organic sessions trend, indexed URL count, brand vs non-brand click split, and the CWV of the three key templates. This goes into the deliverable as the "before" snapshot.
+0. **Run the capability check** and tell the user what will and will not be covered, per the section above. Do this before any analysis.
+1. **Capture the baseline.** Record the current state so impact is provable later: organic sessions trend, indexed URL count, brand vs non-brand click split, and the CWV of the three key templates. Record **only what you could actually measure** — omit the rest rather than guessing.
 2. **Collect evidence, once.** Run the scripts (or the manual sample) and assemble the shared evidence set. Collection happens a single time and is shared by all tracks — never let a track fetch its own pages.
 3. **Run the three analysis tracks** defined in `references/analysis-tracks.md`: Technical/indexation, Content/intent, Demand/keywords/authority. In parallel if subagents are available, sequentially otherwise. Each track works only its own checklist areas and returns findings with evidence.
 4. **Arbitrate.** Merge the tracks per `references/analysis-tracks.md`: deduplicate overlapping findings, resolve conflicts with the decision guides in `references/shopify-seo-rules.md` section 13, and apply the authority gate. This step is mandatory.
@@ -91,6 +124,7 @@ Build the URL sample to cover **every template class**: home, 2-3 top collection
 - Tie content recommendations to search intent and to the store's actual queries, not to volume alone.
 - Performance is a tie-breaker and a conversion factor, not a default root cause for a ranking collapse.
 - Report what was measured versus what was inferred. A refuted finding is a result worth reporting.
+- **Never present an unmeasured area as clean.** State coverage up front, omit unmeasured areas from the body, and list them under "Not assessed" with the input that would unlock them. An audit that hides its own gaps is worse than a short audit.
 
 ## Expected outputs
 

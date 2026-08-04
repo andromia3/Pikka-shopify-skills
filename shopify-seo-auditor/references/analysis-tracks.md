@@ -6,6 +6,8 @@ The audit is analysed along three specialist tracks, then arbitrated. Each track
 
 **All tracks read the same collected evidence.** Collection happens once, before the tracks start. A track never fetches its own pages: that would triple the request volume on the merchant's store for the same URLs.
 
+**A track reports only what its evidence supports.** If the inputs for one of its areas are missing, the track says so explicitly and hands that area to the "Not assessed" section — it does not fill the gap with plausible-sounding analysis, and it never reports an unmeasured area as clean. A track that returns "area 13 not assessed: no CWV data" has done its job correctly.
+
 ---
 
 ## Shared input
