@@ -117,6 +117,19 @@ Apply these instead of a blanket rule. Each ends in an explicit decision, so two
 3. **Discontinued, has traffic/backlinks, no substitute** → 301 to the parent collection, or keep the page with an explanation + alternatives if it earns meaningful traffic.
 4. **Discontinued, no traffic, no links** → let it 404/410. Deleting quietly is fine here — value first, sentiment never.
 
+### Several URLs rank for one query: which one owns the intent?
+
+Shopify makes this common — a product, its collection, a tag page, and a blog article can all target "masque led visage".
+
+1. **Identify the intent.** Transactional/category → a collection owns it. Single-product transactional → the PDP owns it. Informational → the article owns it, and links down to the commercial page.
+2. **Pick the incumbent.** Prefer the URL already ranking best on the query, not the one you wish ranked. Fighting Google's choice is expensive.
+3. **Act on the losers.**
+   - Near-duplicate of the winner (facet variant, duplicate collection) → canonical to the winner.
+   - Genuinely different intent → differentiate title, H1, and intro copy so they stop overlapping.
+   - Thin and redundant → merge into the winner and 301.
+4. **Rewire internal links.** Point internal anchors for that intent at the winner. Cannibalisation usually persists because the site keeps sending mixed signals.
+5. **Record the decision** so the next audit does not re-litigate it.
+
 ### Thin blog article: keep, merge, or remove?
 
 1. Earns clicks, impressions, or backlinks (check 12 months, not 90 days) → **keep and refresh**.

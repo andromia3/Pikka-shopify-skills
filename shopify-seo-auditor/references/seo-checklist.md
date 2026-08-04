@@ -85,6 +85,55 @@ Work through every area. For each item, record: **Status** (Pass / Issue / Criti
 - [ ] Currency/language switching does not create crawl traps or cloaking.
 - [ ] Correct canonical strategy per market.
 
+## 13. Performance and Core Web Vitals
+
+Measure with `scripts/psi_report.py` (CrUX field data first — that is what Google acts on). Lab scores alone are not evidence of a ranking problem.
+
+- [ ] LCP p75 under 2.5s on mobile for the home, a top collection, and a top PDP.
+- [ ] INP p75 under 200ms; CLS p75 under 0.1.
+- [ ] Field data exists at URL level; if not, origin-level data is used and the gap is stated.
+- [ ] Third-party/app scripts are not the dominant blocking cost (check the third-party breakdown).
+- [ ] Images use Shopify's responsive filters and are not oversized for their slot.
+- [ ] Mobile is measured, not desktop — Google indexes mobile-first.
+
+**Interpretation rule.** Poor CWV rarely explains a ranking collapse on its own; it is a tie-breaker between comparable results and a conversion problem in its own right. Do not promote it to root cause unless the evidence supports it. Hand deep theme remediation to `shopify-liquid-reviewer`.
+
+## 14. Cannibalisation and intent ownership
+
+Detect with `scripts/gsc_report.py` on an export carrying both Query and Page.
+
+- [ ] Each priority intent has exactly one owner URL.
+- [ ] Collection pages are not competing with their own products on the same query.
+- [ ] Indexed facet/tag pages are not competing with their parent collection.
+- [ ] Blog articles are not outranking the commercial page they should feed.
+- [ ] No two collections target the same intent with near-duplicate titles.
+- [ ] Where several URLs rank for one query, a consolidate-or-differentiate decision is recorded (see the decision guide in `shopify-seo-rules.md`).
+
+## 15. Authority and competitive context
+
+The store cannot outrank what it has no authority to outrank. Establish the ceiling before recommending on-page work.
+
+- [ ] Referring-domain count and quality are known, at least approximately (Ahrefs, Semrush, Majestic, or GSC links report).
+- [ ] Backlink profile compared to the 3-5 sites actually ranking for the priority non-brand queries.
+- [ ] The SERP for the top 3 priority queries has been looked at: who ranks, what page type wins, which SERP features occupy the space.
+- [ ] Queries dominated by marketplaces, aggregators, or Shopping packs are identified as low-yield for a small store.
+- [ ] Brand vs non-brand click split is known (`scripts/gsc_report.py --brand`).
+- [ ] The plan states which targets are realistic at current authority and which require link acquisition first.
+
+**Diagnostic rule.** If non-brand traffic is weak and the referring-domain profile is thin against the competing set, the primary constraint is authority, not technical SEO. Say so explicitly rather than issuing a long technical list that cannot move the outcome.
+
+## 16. AI answer engines (optional)
+
+Relevant when the store's category sees meaningful discovery through AI Overviews, ChatGPT, Perplexity, or similar. Treat as a secondary axis and do not let it displace fundamentals.
+
+- [ ] Product and Organization structured data is complete and truthful enough to be quotable.
+- [ ] Key product facts (materials, dimensions, compatibility, shipping, returns) exist as extractable text, not only in images or tabs rendered late.
+- [ ] Buying-guide and comparison content exists for the categories where users ask open questions.
+- [ ] The brand is described consistently across the site and major third-party profiles.
+- [ ] `robots.txt` does not accidentally block AI crawlers the merchant wants to be visible in — or deliberately does, if that is the decision.
+
+**Caution.** This area moves fast and measurement is immature. Frame recommendations as positioning, never as a guaranteed traffic channel, and never claim rankings in systems that expose no ranking data.
+
 ---
 
 ## Scoring anchors for the priority matrix

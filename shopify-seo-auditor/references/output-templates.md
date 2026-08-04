@@ -6,22 +6,45 @@ Copy-pasteable deliverable structure. Fill brackets; delete rows that don't appl
 
 ## 1. SEO diagnosis
 
-> **Baseline.** [Organic trend, indexation status, brand vs non-brand split.]
->
 > **Headline.** [The 1-2 findings that explain most of the problem.]
 >
-> **Scope & data used.** [Crawl, GSC, analytics — and what was missing.]
+> **Binding constraint.** [Technical / content / authority — which one actually caps growth. If authority, say so plainly.]
+>
+> **Scope & data used.** [Which tooling mode was used, how many URLs were sampled, which exports were provided — and what was missing.]
+
+### Baseline snapshot
+
+Recorded before any change, so impact is provable later.
+
+| Metric | Value | Source | Date |
+| --- | --- | --- | --- |
+| Organic sessions (last 28d) | [ ] | Analytics | [ ] |
+| Organic clicks / impressions | [ ] | GSC | [ ] |
+| Brand vs non-brand click split | [ ]% / [ ]% | `gsc_report.py` | [ ] |
+| Indexed URLs vs catalogue size | [ ] / [ ] | GSC coverage | [ ] |
+| LCP p75 — home / collection / PDP | [ ] / [ ] / [ ] | `psi_report.py` | [ ] |
+| Referring domains | [ ] | [tool] | [ ] |
+
+### Verification tally
+
+| Status | Count |
+| --- | --- |
+| Confirmed | [ ] |
+| Refuted (dropped) | [ ] |
+| Unverifiable (moved to checklist) | [ ] |
 
 ---
 
 ## 2. Critical issues
 
-Issues actively costing traffic or revenue. Severity: Critical / High / Medium.
+Issues actively costing traffic or revenue. Severity: Critical / High / Medium. Only `CONFIRMED` findings appear at Critical or High.
 
-| # | Issue | Area | Severity | Evidence | Impact if unfixed |
-| --- | --- | --- | --- | --- | --- |
-| 1 | [ ] | [ ] | Critical | [URL / GSC data] | [ ] |
-| 2 | [ ] | [ ] | High | [ ] | [ ] |
+| # | Issue | Area | Track | Severity | Status | Evidence | Impact if unfixed |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | [ ] | [ ] | A/B/C | Critical | CONFIRMED | [URL + observed value] | [ ] |
+| 2 | [ ] | [ ] | [ ] | High | CONFIRMED | [ ] | [ ] |
+
+**Arbitration notes.** [Conflicts resolved between tracks, which decision guide was applied, and any finding downgraded by the authority gate.]
 
 ---
 
@@ -67,4 +90,21 @@ Ordered so dependencies come first (e.g. fix canonicals/indexation before scalin
 - [ ] [Step 2 — owner — verification]
 - [ ] [Step 3 — owner — verification]
 
-**Validation after changes:** re-crawl, recheck GSC coverage, confirm canonicals/sitemaps, monitor index and organic trend for 2-4 weeks.
+### Checks that could not be verified remotely
+
+Findings marked `UNVERIFIABLE` become tasks here rather than assertions above.
+
+- [ ] [What to check — why it could not be confirmed remotely — who has the access]
+
+### Measurement plan
+
+Re-run against the baseline snapshot so impact is provable, not asserted.
+
+| When | What to re-measure | How | Expected direction |
+| --- | --- | --- | --- |
+| Week 0 | Baseline above | scripts + GSC | — |
+| Week 2 | Indexation, canonicals, redirects | `seo_fetch.py`, GSC coverage | [ ] |
+| Week 4-8 | Non-brand clicks, striking-distance positions | `gsc_report.py` | [ ] |
+| Week 8-12 | CWV, organic sessions | `psi_report.py`, analytics | [ ] |
+
+**Validation after changes:** re-crawl, recheck GSC coverage, confirm canonicals/sitemaps, monitor index and organic trend for 2-4 weeks. Attribute cautiously — seasonality and algorithm updates move these numbers too.
